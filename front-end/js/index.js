@@ -1,0 +1,33 @@
+
+(async function() {
+  //fonction pour recuperer les articles 
+    const produits = await getProduits()
+   
+    for (produit of produits) {
+      displayProduit(produit)
+    }
+  })()
+   function getProduits() {
+     //chercher les infos avec fetch du serveur (url)
+    return fetch("http://localhost:3000/api/cameras")
+      .then(function(Response) {
+        return Response.json()
+      })
+      .catch(function(error) {
+        alert(error)  
+      })
+  }
+  
+  function displayProduit(produit) {
+    const templateElt = document.getElementById("templateProduit")
+    const cloneElt = document.importNode(templateElt.content, true)
+// clonner et affichage des éléments
+    cloneElt.getElementById("produitImage").src = produit.imageUrl
+    cloneElt.getElementById("lenses").textContent = produit.lenses
+    cloneElt.getElementById("_id").textContent = `Réf : ${produit._id}`
+    cloneElt.getElementById("name").textContent = produit.name
+    cloneElt.getElementById("price").textContent = `Prix : ${produit.price / 100}.00 €` 
+    cloneElt.getElementById("description").textContent = produit.description
+
+    document.getElementById("main").appendChild(cloneElt)
+  }

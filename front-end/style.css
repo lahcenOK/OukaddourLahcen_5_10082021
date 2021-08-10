@@ -1,0 +1,12 @@
+
+header, footer{
+  background-color: rgba(243,233,241);
+
+
+}
+
+.card {
+  width: 18rem;
+  display: flex;
+  justify-content: space-evenly;
+}
