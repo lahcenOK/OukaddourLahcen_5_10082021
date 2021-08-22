@@ -15,19 +15,18 @@
       })
       .catch(function(error) {
         alert(error)  
-      })
+      });
   }
   
   function displayProduit(produit) {
     const templateElt = document.getElementById("templateProduit")
     const cloneElt = document.importNode(templateElt.content, true)
-// clonner et affichage des éléments
+// clonner et affichage les éléments
     cloneElt.getElementById("produitImage").src = produit.imageUrl
-    cloneElt.getElementById("lenses").textContent = produit.lenses
     cloneElt.getElementById("_id").textContent = `Réf : ${produit._id}`
     cloneElt.getElementById("name").textContent = produit.name
     cloneElt.getElementById("price").textContent = `Prix : ${produit.price / 100}.00 €` 
     cloneElt.getElementById("description").textContent = produit.description
-
+    cloneElt.getElementById("produit_link").href += `?id=${produit._id}`
     document.getElementById("main").appendChild(cloneElt)
   }

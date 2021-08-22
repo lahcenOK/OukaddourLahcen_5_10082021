@@ -10,53 +10,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="style.css">
-  </head>
+</head>
 <body>
 <!--Header-->
 <Header>
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" width="180" height="80" alt="Le logo d'Orinoco">
-      </a>
+      <a class="navbar-brand" href="../index.html">
+        <img src="logo.png" width="180" height="80" alt="Le logo d'Orinoco"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav ">
           <a class="nav-link active" aria-current="page" href="../index.html">Acceuil</a>
-          <a class="nav-link" href="panier.html">Panier</a>
+          <a class="nav-link active" href="panier.html">Panier<img src="favico.png" width="20" height="17" alt="Le logo d'Orinoco"></a>
         </div>
       </div>
     </div>
   </nav>
-  </Header>
-
-  <table class="table">
-    <thead>
+</Header>
+<section class="commande mx-3">
+  <h5 >Votre commande :</h5>
+  <table id="container" class="table table-bordered border-primary  ">
+    <thead class="table-striped">
       <tr>
         <th scope="col">Produit</th>
         <th scope="col">Quantité</th>
         <th scope="col">Prix</th>
-        <th scope="col">Totale</th>
+        <th scope="col">Total</th>
       </tr>
     </thead>
-    </table>
- 
-  <h4 style="margin-top:30px;">Vos coordonnés :</h4>
-  <form  id="form" class="row g-3 needs-validation mx-1" novalidate>
+           
+  </table>
+  <button class="viderPanier btn btn-primary" id="viderPanier" >Vider le Panier </button>
+</section>
+<div class="coordonnes mx-2 "> 
+  <h5>Vos coordonnés :</h5>
+</div>
+
+<form class="row g-3 needs-validation mx-2 colorw" novalidate>
   <div class="col-md-4 position-relative">
-    <label for="nom" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"required>
+    <label for="validationTooltip01" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="name" required>
     <div class="valid-tooltip">
-      Looks good!
+  
     </div>
   </div>
   <div class="col-md-4 position-relative">
     <label for="validationTooltip02" class="form-label">Prénom</label>
     <input type="text" class="form-control" id="prenom" required>
     <div class="valid-tooltip">
-      Looks good!
+    
     </div>
   </div>
   <div class="col-md-4 position-relative">
@@ -73,25 +78,25 @@
     <label for="validationTooltip03" class="form-label">Adresse</label>
     <input type="text" class="form-control" id="validationTooltip03" required>
     <div class="invalid-tooltip">
-      Please provide a valid city.
+
     </div>
   </div>
   <div class="col-md-3 position-relative">
     <label for="validationTooltip04" class="form-label">Code postal</label>
     <input type="text" class="form-control" id="validationTooltip04" required>
     <div class="invalid-tooltip">
-      Please select a valid state.
+      
     </div>
   </div>
   <div class="col-md-3 position-relative">
     <label for="validationTooltip05" class="form-label">Ville</label>
     <input type="text" class="form-control" id="validationTooltip05" required>
     <div class="invalid-tooltip">
-      Please provide a valid zip.
+    
     </div>
   </div>
-    <div class="col-12">
-    <button id="envoiFormulaire" class="btn btn-primary" type="submit"> Valider votre Commande</button>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Valider votre Commande</button>
   </div>
 </form>
 
@@ -99,9 +104,7 @@
 <footer class=" py-4" >
   <p class="copyright text-center">Orinoco © 2021</p>
 </footer>
-
-<script src="./routes/camera.js"> </script>
-<script src="frontend/js/index.js"></script>
+<script  src="./js/panier.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
 </script>

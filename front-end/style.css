@@ -1,12 +1,48 @@
 
 header, footer{
   background-color: rgba(243,233,241);
-
-
 }
 
+.colorp {
+  background-color: rgba(243,233,241);
+  border-radius: 5px;
+}
+.colorw {
+  background-color: white;
+}
+.navbar{
+  font-weight: bold;
+  }
+
+/*index*/
 .card {
-  width: 18rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+    }
+#container {
+    justify-content: center;
 }
+
+/*produit html 
+.lentille {
+  align-content: center;
+}
+.quantites {
+  align-content:center;
+}
+.panier{
+    width :27rem;
+ 
+}*/
+
+/*panier*/
+.commande h5{
+ font-weight: bold;
+ margin-top:25px;
+ margin-left: 0px; 
+}
+.coordonnes h5{
+  font-weight: bold;
+  margin-top:25px;
+  margin-left: 5px; 
+ }
