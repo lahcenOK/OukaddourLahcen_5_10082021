@@ -36,13 +36,15 @@ header, footer{
 }*/
 
 /*panier*/
-.commande h5{
+.commande h1{
+ font-size: 20px;
  font-weight: bold;
- margin-top:25px;
+ margin-top:28px;
  margin-left: 0px; 
 }
-.coordonnes h5{
+.coordonnes h2{
   font-weight: bold;
-  margin-top:25px;
-  margin-left: 5px; 
+  font-size: 20px;
+  margin-top:28px;
+  margin-left: 0px; 
  }

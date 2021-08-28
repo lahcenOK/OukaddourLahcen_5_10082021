@@ -13,8 +13,8 @@
       .then(function(Response) {
         return Response.json()
       })
-      .catch(function(error) {
-        alert(error)  
+      .catch(function(err) {
+        alert("Serveur introuvable");
       });
   }
   

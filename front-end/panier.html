@@ -31,70 +31,70 @@
   </nav>
 </Header>
 <section class="commande mx-3">
-  <h5 >Votre commande :</h5>
+  <h1> Votre commande :</h1>
   <table id="container" class="table table-bordered border-primary  ">
-    <thead class="table-striped">
+    <thead class="table-light">
       <tr>
-        <th scope="col">Produit</th>
+        <th scope="col">Réference</th>
+        <th scope="col">Désignation</th>
         <th scope="col">Quantité</th>
-        <th scope="col">Prix</th>
+        <th scope="col">Prix.Unitaire</th>
         <th scope="col">Total</th>
+        <th scope="col"></th>
       </tr>
     </thead>
            
   </table>
   <button class="viderPanier btn btn-primary" id="viderPanier" >Vider le Panier </button>
 </section>
-<div class="coordonnes mx-2 "> 
-  <h5>Vos coordonnés :</h5>
+<div class="coordonnes mx-3"> 
+  <h2>Vos coordonnés :</h2>
 </div>
 
-<form class="row g-3 needs-validation mx-2 colorw" novalidate>
-  <div class="col-md-4 position-relative">
-    <label for="validationTooltip01" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="name" required>
-    <div class="valid-tooltip">
-  
-    </div>
+<form action="#" method="POST" id="formulaire" class="row g-3 needs-validation mx-2 colorw" >
+  <div>
+    <input type="radio" id="Mr" name="drone" value="Mr" checked>
+    <label for="Mr">Mr</label>
+
+    <input type="radio" id="Mme" name="drone" value="Mme">
+    <label for="Mme">Mme</label>
   </div>
   <div class="col-md-4 position-relative">
-    <label for="validationTooltip02" class="form-label">Prénom</label>
-    <input type="text" class="form-control" id="prenom" required>
-    <div class="valid-tooltip">
-    
-    </div>
+    <label for="nom" >Nom :</label>
+    <input type="text" id="nom" name="nom"  class="form-control" required="required" placeholder="Nom" />
   </div>
+
+  <div class="col-md-4 position-relative" >
+    <label  for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required="required"  class="form-control" placeholder="Prénom" />
+  </div>
+
   <div class="col-md-4 position-relative">
-    <label for="validationTooltipUsername" class="form-label">Adresse email</label>
+    <label for="email">Adresse e-mail :</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="validationTooltipUsernamePrepend">@Email</span>
-      <input type="emailt" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-      <div class="invalid-tooltip">
-        Please choose a unique and valid username.
-      </div>
+      <input type="email" class="form-control" id="email" required="required" placeholder="example@gmail.com"
+      pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
     </div>
   </div>
-  <div class="col-md-6 position-relative">
-    <label for="validationTooltip03" class="form-label">Adresse</label>
-    <input type="text" class="form-control" id="validationTooltip03" required>
-    <div class="invalid-tooltip">
 
-    </div>
+  <div class="col-md-6 position-relative">
+    <label for="adresse" >Adresse :</label>
+    <input type="text" class="form-control" id="adresse" name="adresse" required="required" placeholder="29 Rue pavé des gardes">
   </div>
+
   <div class="col-md-3 position-relative">
-    <label for="validationTooltip04" class="form-label">Code postal</label>
-    <input type="text" class="form-control" id="validationTooltip04" required>
-    <div class="invalid-tooltip">
-      
-    </div>
+    <label for="codepostal" > Code postal :</label>
+    <input type="text" class="form-control" id="codepostal" name="text" required="required" placeholder="75000"
+    pattern="[0-9]{,5}" />
   </div>
+
   <div class="col-md-3 position-relative">
-    <label for="validationTooltip05" class="form-label">Ville</label>
-    <input type="text" class="form-control" id="validationTooltip05" required>
-    <div class="invalid-tooltip">
-    
-    </div>
+    <label for="ville" >Ville :</label>
+    <input type="text" class="form-control" id="ville" name="text" required="required" placeholder=" Paris"
+        pattern="^[a-zA-Z]{1}[a-zA-Z'À-ÿ -]+$" />
   </div>
+   
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Valider votre Commande</button>
   </div>

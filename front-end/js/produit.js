@@ -1,3 +1,22 @@
+class produit {
+  constructor({
+    _id,
+    imageUrl,
+    name,
+    price,
+    quantites,
+    lenses,
+    description,
+  }) {
+    this.id = _id;
+    this.imageUrl = imageUrl;
+    this.name = name;
+    this.price = price;
+    this.quantites = parseInt(quantites, 10); // transforme chaine de caractère en nombre
+    this.lenses = lenses;
+    this.description = description;
+  }
+};
 
 // Recuperer l'url
 let params = (new URL(document.location)).searchParams
@@ -6,15 +25,6 @@ const id = params.get("id")
 //Emplacement dans HTML
 let container = document.getElementById("container");
 
-// API
-fetch("http://localhost:3000/api/cameras/" + id)
-.then(response => response.json())
-.then(function (produit) {
-  display(produit);
-})
-.catch(function(err){
-alert(err)
-});
 // Inserer structure html du produit
 display = produit => {
   container.innerHTML =`
@@ -34,38 +44,63 @@ display = produit => {
         <option value="2">2</option>
         <option value="3">3</option>
         </select>  
-             
-        <a  class="text-center" href ="./panier.html">
-        <button id="ajouter" type ="submit"   value="submit"> Ajouter au panier</button></a>
+        <p class="toto"></p>
+         <a  class="text-center" href ="./panier.html">
+        <button id="ajouter" type ="submit" value="submit" class="btn-primary"> Ajouter au panier</button></a>
         <a class="card-footer text-center" href="../index.html">Revenir à la liste des produits</a>       
       </div>
     </div>
-        `;
-        // Ajout d'option des lentilles
-         for (let lenses of produit.lenses){ 
-          document.getElementById("lense").innerHTML +=
-          `<option value="lenses">${lenses}<option>`; 
-         }
-        
-   document.getElementById('ajouter').addEventListener('click', function (event) {
-    event.preventDefault();
+  `;
 
-    let  prdlocalstorage = JSON.parse(localStorage.getItem("produit"));
-
-let NVproduit = { 
-      Id : produit._id,
-      name :  produit.name,
-      price : produit.price/ 100,
-      quantite : parseInt(document.getElementById('quantites').value),
-   };
-
-  if ( prdlocalstorage != null){
-    localStorage.getItem("panier", JSON.parse(prdlocalstorage))
+// Ajout d'option des lentilles
+  for (let lenses of produit.lenses){ 
+    document.getElementById("lense").innerHTML =
+      `<option value="lenses">${lenses}<option>`; 
   }
-    else { prdlocalstorage =[];
-      prdlocalstorage.push(NVproduit);
-      localStorage.setItem("panier", JSON.stringify(prdlocalstorage))
-         }
+// Ecouter de l'evenement clic      
+  document.getElementById('ajouter').addEventListener('click', function () {
+          addPrdPanier(produit); 
+  });
+};
 
-    });
+// Sauvegarde du panier dans le localstorage
+const addLocalStorage = panier => {
+  localStorage.setItem('panier', JSON.stringify(panier));
+}  
+// Ajout de la quantité 
+const addPrdPanier = produit=> {
+  produit.quantites = parseInt(document.getElementById('quantites').value);
+//Récuperer le panier
+  let panier = localStorage.getItem('panier') ? JSON.parse(localStorage.getItem('panier')) : [];
+
+//Le parcourt du panier 
+  let PrdtExist = false;
+  for (let i = 0; i < panier.length; i++) {
+    let NVproduit = panier[i];
+
+// Si produit existe
+    if (NVproduit.id === produit.id) {
+      PrdtExist = i;
+    }
   };
+// Produit existe dans le panier
+    if (false !== PrdtExist) {
+      panier[PrdtExist].quantites = parseInt(panier[PrdtExist].quantites) + produit.quantites;
+    } else {
+      panier.push(produit);
+    };
+
+  addLocalStorage(panier);
+};
+
+// Appel de l'API
+fetch("http://localhost:3000/api/cameras/" + id)
+.then(response => response.json())
+.then(function (NVproduit) {
+ produit = new produit(NVproduit)
+ display(produit);
+})
+.catch(function(err){
+alert("Ajouter au panier");
+});
+
