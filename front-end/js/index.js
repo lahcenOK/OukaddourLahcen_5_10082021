@@ -8,13 +8,13 @@
     }
   })()
    function getProduits() {
-     //chercher les infos avec fetch du serveur (url)
+     //chercher les infos avec fetch dans serveur
     return fetch("http://localhost:3000/api/cameras")
       .then(function(Response) {
         return Response.json()
       })
       .catch(function(err) {
-        alert("Serveur introuvable");
+        alert("Service momentanément indisponible");
       });
   }
   

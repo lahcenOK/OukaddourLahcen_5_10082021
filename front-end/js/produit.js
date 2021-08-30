@@ -1,3 +1,4 @@
+// Fiche produit
 class produit {
   constructor({
     _id,
