@@ -43,3 +43,55 @@ header, footer{
   font-weight: bold;
 }
 
+@media only screen and (max-width: 700px) {
+  .table-responsive table, 
+  .table-responsive thead, 
+  .table-responsive tr, 
+  .table-responsive th, 
+  .table-responsive td {
+      display: block;
+  }
+
+ .table-responsive thead , tfoot td:nth-child(-n+3),tfoot td:nth-child(6) {
+  display: none;
+}
+
+.table-responsive tfoot td:nth-child(4) {
+  background-color: #ecedee;
+  color: black;
+}
+
+  .table-responsive td {
+      padding-left: 125px;
+      position: relative;
+      margin-top: -1px;
+      background: #FFF;
+      border:solid 1px  rgb(52, 142, 226);
+  }
+  .table-responsive td::before {
+      padding: 10px;
+      content: attr(data-label);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      bottom: 0;
+      background-color: #ecedee;
+      color: rgb(15, 15, 15);
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      border-right:solid 1px  rgb(52, 142, 226);
+  }
+
+  .table-responsive tr {
+      margin-bottom: 1rem;
+  }
+
+  .table-responsive th + td {
+      padding-left: 0px;
+  }
+  .table-responsive tfoot {
+   /* background-color: #ecedee;*/
+    width: 0px;}
+}

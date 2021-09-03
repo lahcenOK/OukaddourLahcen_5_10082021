@@ -33,15 +33,15 @@
 </Header>
 <section class="commande mx-3">
   <h1> Votre commande :</h1>
-  <table id="container" class="table table-bordered border-primary table-responsive">
-    <thead class="table-light text-center">
-      <tr>
-        <th scope="col">Réference</th>
-        <th scope="col">Désignation</th>
-        <th scope="col">Quantité</th>
-        <th scope="col">Prix.Unitaire</th>
-        <th scope="col">Prix Total</th>
-        <th scope="col"></th>
+  <table id="container" class="table table-bordered border-primary table-responsive ">
+    <thead class="table-light text-center ">
+      <tr >
+        <th >Réference</th>
+        <th >Désignation</th>
+        <th >Quantité</th>
+        <th >Prix.Unitaire</th>
+        <th >Prix Total</th>
+        <th >Suppression</th>
       </tr>
     </thead>
     <tfoot class="table-light alignright">
@@ -49,7 +49,7 @@
         <td ></td>
         <td ></td>
         <td ></td>
-        <td>TOTAL</td>
+        <td >TOTAL</td>
         <td id ="Total"></th>
         <td ></td>
       </tr>
@@ -61,7 +61,7 @@
   <h2>Vos coordonnés :</h2>
 </div>
 
-<form action="#" method="POST" id="formulaire" class="row g-3 needs-validation mx-2 colorw" >
+<form action="#" method="POST" id="form" class="row g-3 needs-validation mx-2 colorw" >
   <div>
     <input type="radio" id="Mr" name="drone" value="Mr" checked>
     <label for="Mr">Mr</label>
@@ -84,7 +84,7 @@
     <div class="input-group has-validation">
       <span class="input-group-text" id="validationTooltipUsernamePrepend">@Email</span>
       <input type="email" class="form-control" id="email" required="required" placeholder="example@gmail.com"
-      pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
+      pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-z]{2,5}" />
     </div>
   </div>
 
@@ -114,9 +114,8 @@
 <footer class=" py-4" >
   <p class="copyright text-center">Orinoco © 2021</p>
 </footer>
-<script  src="./js/panier.js" defer></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  <script  src="./js/panier.js" defer></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
 </script>
 

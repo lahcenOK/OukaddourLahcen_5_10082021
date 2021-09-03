@@ -58,9 +58,9 @@ display = produit => {
     document.getElementById("lense").innerHTML =
       `<option value="lenses">${lenses}<option>`; 
   }
-// Ecouter de l'evenement clic      
+// Ecouter de l'evenement clic  
   document.getElementById('ajouter').addEventListener('click', function () {
-          addPrdPanier(produit); 
+          addPrdPanier(produit) 
   });
 };
 
@@ -71,6 +71,7 @@ const addLocalStorage = panier => {
 // Ajout de la quantité 
 const addPrdPanier = produit=> {
   produit.quantites = parseInt(document.getElementById('quantites').value);
+
 //Récuperer le panier
   let panier = localStorage.getItem('panier') ? JSON.parse(localStorage.getItem('panier')) : [];
 
@@ -90,7 +91,6 @@ const addPrdPanier = produit=> {
     } else {
       panier.push(produit);
     };
-
   addLocalStorage(panier);
 };
 
@@ -104,4 +104,3 @@ fetch("http://localhost:3000/api/cameras/" + id)
 .catch(function(err){
 alert("Ajouter au panier");
 });
-

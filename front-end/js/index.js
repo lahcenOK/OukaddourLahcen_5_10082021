@@ -1,4 +1,3 @@
-
 (async function() {
   //fonction pour recuperer les articles 
     const produits = await getProduits()
