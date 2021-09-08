@@ -47,8 +47,8 @@ display = produit => {
         <option value="3">3</option>
         </select> 
         <a  class="text-center fs-5" href ="./panier.html">
-        <button id="ajouter" type ="submit" value="submit" class="btn-primary"> Ajouter au panier</button></a>
-        <a class="card-footer text-center fs-5" href="../index.html">Revenir à la liste des produits</a>       
+        <button id="ajouter" type ="submit" value="submit" class="btn-primary fs-6 fw-bold"> Ajouter au panier</button></a>
+        <a class="card-footer text-center fs-6 fw-bold" href="../index.html">Revenir à la liste des produits</a>       
       </div>
     </div>
   `;

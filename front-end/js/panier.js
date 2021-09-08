@@ -14,7 +14,7 @@ produits.forEach((produit) => {
         <td data-label="Quantité" class="quantites text-center">${produit.quantites}</td>
         <td data-label="Prix.Unitaire" class="prix"  align="right">${produit.price / 100}.00 €</td>
         <td data-label="Prix Total" classs="Total" align="right">${produit.quantites * produit.price / 100}.00 €</td>
-        <td data-label="Suppression" class="text-center"><button class=" btn btn-danger"  type="submit">Supprimer</button> </td >
+        <td data-label="Suppression" class="text-center "><button class="fw-bold btn btn-danger"  type="submit">Supprimer</button> </td >
     </tr>
   `;
   // Incrémentation de Id.produit dans products
@@ -100,7 +100,7 @@ function send () {
     });                 
   } else {
 //On empêche l'envoi si le panier est vide 
-        alert("erreur : completer votre commande")
+        alert("erreur : completer les informations manquantes de votre commande")
          };
 }
 //Evénement pour l'envoi de la commande
