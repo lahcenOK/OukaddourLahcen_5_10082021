@@ -1,20 +1,19 @@
 (async function() {
   //fonction pour recuperer les articles 
-    const produits = await getProduits()
+    const produits = await getProduits();
    
     for (produit of produits) {
       displayProduit(produit)
     }
   })()
-   function getProduits() {
+   async function getProduits() {
      //chercher les infos avec fetch dans serveur
-    return fetch("http://localhost:3000/api/cameras")
-      .then(function(Response) {
-        return Response.json()
-      })
-      .catch(function(err) {
+    try {
+       const Response = await fetch("http://localhost:3000/api/cameras");
+       return await Response.json();
+     } catch (err) {
         alert("Service momentanément indisponible");
-      });
+     }
   }
   
   function displayProduit(produit) {

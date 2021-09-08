@@ -23,7 +23,10 @@ header, footer{
     justify-content: center;
 }
 
-/*produit html 
+/*produit html  */
+.section h1{
+  display: none;
+}
 
 /*panier*/
 .commande h1{
