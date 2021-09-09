@@ -1,13 +1,13 @@
 (async function() {
-  //fonction pour recuperer les articles 
+  //fonction pour récuperer les produits 
     const produits = await getProduits();
-   
+  // Parcourt du contenu produits
     for (produit of produits) {
       displayProduit(produit)
     }
   })()
    async function getProduits() {
-     //chercher les infos avec fetch dans serveur
+ //chercher les infos avec fetch dans le serveur
     try {
        const Response = await fetch("http://localhost:3000/api/cameras");
        return await Response.json();
@@ -19,7 +19,7 @@
   function displayProduit(produit) {
     const templateElt = document.getElementById("templateProduit")
     const cloneElt = document.importNode(templateElt.content, true)
-// clonner et affichage les éléments
+// Clonner et affichage les éléments
     cloneElt.getElementById("produitImage").src = produit.imageUrl
     cloneElt.getElementById("_id").textContent = `Réf : ${produit._id}`
     cloneElt.getElementById("name").textContent = produit.name

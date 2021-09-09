@@ -19,7 +19,7 @@ class produit {
   }
 };
 
-// Recuperer l'url
+// Récuperer l'url
 let params = (new URL(document.location)).searchParams
 //Stocker l'id produit
 const id = params.get("id")
@@ -58,7 +58,7 @@ display = produit => {
     document.getElementById("lense").innerHTML =
       `<option value="lenses">${lenses}<option>`; 
   }
-// Ecouter de l'evenement clic  
+// Evenement click  
   document.getElementById('ajouter').addEventListener('click', function () {
           addPrdPanier(produit) 
   });

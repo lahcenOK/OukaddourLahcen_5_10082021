@@ -1,12 +1,12 @@
 //Récupération de l'objet/
 let produits = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : [];
-
+//Emplacement dans HTML
 let container = document.getElementById("container");
-//declaration de tableau Id products a envoyer au serveur
+//déclaration de tableau products(Id) à envoyer au serveur
 let products= [];
 
 // Boucle d'Affichage produit
-produits.forEach((produit) => {
+produits.forEach(function(produit) {
   container.innerHTML += `
     <tr class="commande_produit">
         <td data-label="Réference">${produit.id}</td>
@@ -17,7 +17,7 @@ produits.forEach((produit) => {
         <td data-label="Suppression" class="text-center "><button class="fw-bold btn btn-danger"  type="submit">Supprimer</button> </td >
     </tr>
   `;
-  // Incrémentation de Id.produit dans products
+// Incrémentation de Id.produit dans products
   for (let i = 0; i < produit.quantites; i++) {
     products .push(produit.id);
   }
@@ -51,7 +51,7 @@ let removebutton = document.getElementsByClassName("btn-danger");
       });
   };
 
-//Vider  le panier
+//Vider le panier
 const viderPanier = document.getElementById("viderPanier");
   viderPanier.addEventListener("click", () => {
     localStorage.clear();
@@ -65,7 +65,7 @@ const regexCity = /^[a-zA-Z]+[a-zA-Z'À-ÿ -]+$/;
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,5}$/;
 
 function send () {
-// le formulaire est envoyé s'il y a des poroduits dans le panier
+// le formulaire est envoyé si les conditions sont remplies 
   let contact = {
     firstName : document.getElementById("nom").value,
     lastName : document.getElementById("prenom").value,
@@ -99,7 +99,7 @@ function send () {
       alert(err);
     });                 
   } else {
-//On empêche l'envoi si le panier est vide 
+//On empêche l'envoi si l'une des conditions est fausse 
         alert("erreur : completer les informations manquantes de votre commande")
          };
 }
