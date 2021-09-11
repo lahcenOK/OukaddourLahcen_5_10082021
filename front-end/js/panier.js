@@ -54,8 +54,9 @@ let removebutton = document.getElementsByClassName("btn-danger");
 //Vider le panier
 const viderPanier = document.getElementById("viderPanier");
   viderPanier.addEventListener("click", () => {
-    localStorage.clear();
-    window.location.reload();
+      if (confirm("Etes-vous sur de vider votre panier ?")){
+      localStorage.clear();
+      window.location.reload();}
   });
 
 // Formulaire
