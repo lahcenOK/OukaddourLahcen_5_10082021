@@ -60,7 +60,7 @@ const viderPanier = document.getElementById("viderPanier");
   });
 
 // Formulaire
-const regexName = /^[a-zA-ZÀ-ÿ0-9._-]{2,20}$/;
+const regexName = /^[a-zA-ZÀ-ÿ_-]{2,20}$/;
 const regexAddress = /^[a-zA-ZÀ-ÿ0-9._-\s]{2,30}$/;
 const regexCity = /^[a-zA-Z]+[a-zA-Z'À-ÿ -]+$/; 
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,5}$/;
